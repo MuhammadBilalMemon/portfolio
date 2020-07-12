@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 import {
   AppBar,
@@ -120,6 +121,7 @@ const NavBar = () => {
               onClose={toggleSlider("left", false)}
             >
               {sideBar()}
+              <Footer />
             </Drawer>
           </Toolbar>
         </AppBar>
