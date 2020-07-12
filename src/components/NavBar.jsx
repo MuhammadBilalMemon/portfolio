@@ -118,7 +118,6 @@ const NavBar = () => {
             </Drawer>
           </Toolbar>
         </AppBar>
-        <h1>Nav Bar Component</h1>
       </Box>
     </>
   );
