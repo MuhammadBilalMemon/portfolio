@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 
 import {
   AppBar,
@@ -47,19 +48,23 @@ const navStyles = makeStyles((theme) => ({
 const genericListIcons = [
   {
     listIcon: <Home />,
-    ListText: "Home",
+    listText: "Home",
+    listPath: "/",
   },
   {
     listIcon: <AssignmentInd />,
-    ListText: "Resume",
+    listText: "Resume",
+    listPath: "/resume",
   },
   {
     listIcon: <Apps />,
-    ListText: "Portrolio",
+    listText: "Portrolio",
+    listPath: "/portfolio",
   },
   {
     listIcon: <ContactMail />,
-    ListText: "Contact Me",
+    listText: "Contact Me",
+    listPath: "/contact",
   },
 ];
 
@@ -69,7 +74,7 @@ const NavBar = () => {
   });
 
   const toggleSlider = (slider, open) => () => {
-    setvisible({ [slider]: open });
+    setvisible({ ...visible, [slider]: open });
   };
 
   const classes = navStyles();
@@ -84,13 +89,13 @@ const NavBar = () => {
       <Divider />
       <List>
         {genericListIcons.map((item, key) => (
-          <ListItem button key={key}>
+          <ListItem button key={key} component={Link} to={item.listPath}>
             <ListItemIcon className={classes.listItem}>
               {item.listIcon}
             </ListItemIcon>
             <ListItemText
               className={classes.listItem}
-              primary={item.ListText}
+              primary={item.listText}
             />
           </ListItem>
         ))}
