@@ -3,6 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 
+import MobileLeftMenuSlider from "@material-ui/core/Drawer";
+
 import {
   AppBar,
   Toolbar,
@@ -15,7 +17,6 @@ import {
   List,
   Typography,
   Box,
-  Drawer,
 } from "@material-ui/core";
 
 import {
@@ -115,14 +116,14 @@ const NavBar = () => {
             <Typography variant="h5" style={{ color: "tan" }}>
               Porfolio
             </Typography>
-            <Drawer
+            <MobileLeftMenuSlider
               anchor="left"
               open={visible.left}
               onClose={toggleSlider("left", false)}
             >
               {sideBar()}
               <Footer />
-            </Drawer>
+            </MobileLeftMenuSlider>
           </Toolbar>
         </AppBar>
       </Box>

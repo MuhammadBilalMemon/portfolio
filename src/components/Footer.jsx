@@ -6,10 +6,10 @@ import { BottomNavigation, BottomNavigationAction } from "@material-ui/core";
 import { Facebook, Twitter, Instagram } from "@material-ui/icons";
 
 const footerStyles = makeStyles({
-  roort: {
+  root: {
     "& .MuiBottomNavigationAction-root": {
       minWidth: 0,
-      maxWithd: 250,
+      maxWidth: 250,
     },
     "& .MuiSvgIcon-root": {
       fill: "tan",
@@ -31,10 +31,12 @@ const Footer = () => {
         icon={<Facebook />}
       ></BottomNavigationAction>
       <BottomNavigationAction
+        className={classes.root}
         style={{ padding: 0 }}
         icon={<Twitter />}
       ></BottomNavigationAction>
       <BottomNavigationAction
+        className={classes.root}
         style={{ padding: 0 }}
         icon={<Instagram />}
       ></BottomNavigationAction>
